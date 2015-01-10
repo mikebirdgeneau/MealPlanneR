@@ -1,9 +1,10 @@
 Package: MealPlanneR
 Type: Package
-Title: What the package does (short line)
+Title: Create Meal Plans
 Version: 1.0
 Date: 2015-01-10
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Author: Mike Birdgeneau
+Maintainer: Mike Birdgeneau <mike.birdgeneau@gmail.com>
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
+License: GPL >=2.0
+Depends: data.table

@@ -6,25 +6,47 @@
 #
 
 library(shiny)
+library(MealPlanneR)
 
-shinyUI(fluidPage(
 
-  # Application title
-  titlePanel("Old Faithful Geyser Data"),
-
-  # Sidebar with a slider input for number of bins
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
+shinyUI(
+  navbarPage(
+    title = "MealPlanGNAR",collapsable=TRUE,fluid=TRUE,responsive=TRUE,inverse=TRUE,windowTitle="MealPlanGNAR",
+    tabPanel("Meal Plan",
+             fluidRow(
+               column(12,
+                      h3("Meal Plan"),
+                      hr()
+               )
+             )
     ),
-
-    # Show a plot of the generated distribution
-    mainPanel(
-      plotOutput("distPlot")
-    )
+    tabPanel("Recipe Browser",
+             fluidRow(
+               column(12,
+                      h3("Recipe Browser"),
+                      hr(),
+                      uiOutput("searchRecipes")
+               )
+             ),
+             fluidRow(
+               column(12,
+                      uiOutput("displaySelectedRecipe")
+                      )
+               )
+    ),
+    tabPanel("Recipe Editor",
+             fluidRow(
+               column(12,
+                      h3("Recipe Editor"),
+                      hr()
+               )
+             )
+    ),
+    footer=fluidRow(
+      column(12,
+             hr(),
+             p("Copyright (C) 2015 Mike Birdgeneau. All Rights Reserved.")
+             )
+      )
   )
-))
+)
