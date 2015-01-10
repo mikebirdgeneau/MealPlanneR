@@ -49,7 +49,11 @@ shinyUI(
                                                     br()
                                                     ),
                                              column(8,
-                                                    uiOutput("addIngredientsUI")
+                                                    uiOutput("addIngredientsUI"),
+                                                    uiOutput("ingredientTable"),
+                                                    uiOutput("addDirections"),
+                                                    uiOutput("recipeSaveButton"),
+                                                    uiOutput("saveStatus")
                                              )
                                            )
                                   ),
