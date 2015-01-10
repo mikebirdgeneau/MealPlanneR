@@ -31,9 +31,9 @@ Recipe<-setRefClass("Recipe",fields = c(
     },
     addDirections=function(directions,append=TRUE){
       if(append){
-      .self$directions<-c(.self$directions,directions)
+      .self$directions<-c(.self$directions,paste0(directions,"\n"))
       } else {
-      .self$directions<-directions
+      .self$directions<-paste0(directions,"\n")
       }
     }
   )

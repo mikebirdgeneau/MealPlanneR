@@ -38,7 +38,29 @@ shinyUI(
              fluidRow(
                column(12,
                       h3("Recipe Editor"),
-                      hr()
+                      hr(),
+                      tabsetPanel(id = "recipeEditor",type = "pills",position = "above",
+                                  tabPanel("Add Recipe",
+                                           fluidRow(
+                                             column(4,
+                                                    uiOutput("addRecipeUI"),
+                                                    actionButton("buttonCreateRecipe",label = "Create Recipe"),
+                                                    br(),
+                                                    br()
+                                                    ),
+                                             column(8,
+                                                    uiOutput("addIngredientsUI")
+                                             )
+                                           )
+                                  ),
+                                  tabPanel("Edit Recipe",
+                                           uiOutput("searchRecipes2"),
+                                           p("Feature incomplete.")
+                                           ),
+                                  tabPanel("Remove Recipe",
+                                           p("Feature not implemented.")
+                                  )
+                      )
                )
              )
     ),
